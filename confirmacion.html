@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Travel - Confirmación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Menú de navegación -->
+    <nav class="bg-blue-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Aventura Travel</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                <li><a href="destinos.html" class="hover:underline">Destinos</a></li>
+                <li><a href="reserva.html" class="hover:underline">Reserva</a></li>
+                <li id="navConfirmacion" class="hidden"><a href="confirmacion.html"
+                        class="hover:underline font-semibold">Confirmación</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="bg-blue-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Confirma tu reserva</h1>
+            <p class="text-xl">Revisa los detalles antes de proceder al pago</p>
+        </div>
+    </header>
+
+    <!-- Resumen de la reserva -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold mb-6 text-center">Resumen de tu reserva</h2>
+
+                <div id="resumenReserva" class="space-y-4 mb-8">
+                    <!-- Los datos se cargarán con JavaScript -->
+                </div>
+
+                <div class="border-t border-gray-200 pt-6 mb-6">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-lg font-semibold">Total:</span>
+                        <span id="totalReserva" class="text-2xl font-bold">$0</span>
+                    </div>
+                    <p class="text-sm text-gray-500">Impuestos y cargos incluidos</p>
+                </div>
+
+                <div id="payment-methods" class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="payment-option border border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition duration-300 cursor-pointer"
+                        data-method="card">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="Visa" class="h-12 mx-auto mb-3" alt="Visa" class="h-12 mx-auto mb-3">
+                        <p class="font-medium">Tarjeta de crédito/débito</p>
+                    </div>
+                    <div class="payment-option border border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition duration-300 cursor-pointer"
+                        data-method="paypal">
+                        <img src="data:image/png;base64,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"
+                            alt="PayPal" class="h-12 mx-auto mb-3" alt="PayPal" class="h-12 mx-auto mb-3">
+                        <p class="font-medium">PayPal</p>
+                    </div>
+                    <div class="payment-option border border-gray-200 rounded-lg p-4 text-center hover:border-blue-500 transition duration-300 cursor-pointer"
+                        data-method="bizum">
+                        <img src="https://media.istockphoto.com/id/1452706695/es/vector/icono-de-transferencia-de-dinero-en-vector-logotipo.jpg?s=612x612&w=0&k=20&c=BHyuGRfstxA3u1b-H69PY2IhrN4m4b4N0xZ7T-JNy9c="
+                            alt="Transferencia" class="h-12 mx-auto mb-3.png" alt="Transferencia"
+                            class="h-12 mx-auto mb-3">
+                        <p class="font-medium">Transferencia</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <button id="btnPagar"
+                        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300">
+                        Pagar ahora
+                    </button>
+                    <button id="btnCancelar"
+                        class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300">
+                        Cancelar reserva
+                    </button>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <button id="btnEditar"
+                        class="text-blue-600 hover:text-blue-800 font-medium flex items-center mx-auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                            fill="currentColor">
+                            <path
+                                d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                        </svg>
+                        Editar datos de la reserva
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; @2025 Viajes Pallá. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="confirmacionJS.js"></script>
+    <script>
+        // Mostrar enlace a confirmación si hay datos de reserva
+        if (localStorage.getItem('reservaData')) {
+            document.getElementById('navConfirmacion').classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>

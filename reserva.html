@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Travel - Reserva</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Menú de navegación -->
+    <nav class="bg-blue-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Aventura Travel</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                <li><a href="destinos.html" class="hover:underline">Destinos</a></li>
+                <li><a href="reserva.html" class="hover:underline font-semibold">Reserva</a></li>
+                <li id="navConfirmacion" class="hidden"><a href="confirmacion.html" class="hover:underline">Confirmación</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Encabezado -->
+    <header class="bg-blue-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Reserva tu viaje</h1>
+            <p class="text-xl">Completa el formulario para asegurar tu aventura</p>
+        </div>
+    </header>
+
+    <!-- Formulario de reserva -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <form id="reservaForm" class="space-y-6">
+                    <div>
+                        <label for="origen" class="block text-lg font-medium text-gray-700 mb-2">Ciudad de origen</label>
+                        <select id="origen" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Selecciona tu ciudad de origen</option>
+                            <option value="madrid">Madrid</option>
+                            <option value="barcelona">Barcelona</option>
+                            <option value="valencia">Valencia</option>
+                            <option value="sevilla">Sevilla</option>
+                            <option value="bilbao">Bilbao</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="destino" class="block text-lg font-medium text-gray-700 mb-2">Destino</label>
+                        <select id="destino" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="">Selecciona tu destino</option>
+                            <option value="paris">París, Francia</option>
+                            <option value="tokyo">Tokio, Japón</option>
+                            <option value="new-york">Nueva York, USA</option>
+                            <option value="roma">Roma, Italia</option>
+                            <option value="bali">Bali, Indonesia</option>
+                            <option value="cancun">Cancún, México</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="fecha-salida" class="block text-lg font-medium text-gray-700 mb-2">Fecha de salida</label>
+                            <input type="date" id="fecha-salida" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="fecha-vuelta" class="block text-lg font-medium text-gray-700 mb-2">Fecha de vuelta</label>
+                            <input type="date" id="fecha-vuelta" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="personas" class="block text-lg font-medium text-gray-700 mb-2">Número de personas</label>
+                        <select id="personas" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            <option value="1">1 persona</option>
+                            <option value="2">2 personas</option>
+                            <option value="3">3 personas</option>
+                            <option value="4">4 personas</option>
+                            <option value="5">5 personas</option>
+                            <option value="6">6 personas</option>
+                            <option value="7">7 personas</option>
+                            <option value="8">8 personas</option>
+                            <option value="9">9 personas</option>
+                            <option value="10">10 personas</option>
+                        </select>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-lg transition duration-300">
+                            Continuar con la reserva
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Información adicional -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-8">Preguntas frecuentes</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">¿Cuál es la política de cancelación?</h3>
+                    <p class="text-gray-600">Puedes cancelar tu reserva hasta 30 días antes del viaje sin coste alguno. Entre 30 y 15 días antes se aplicará un 20% de gastos. Menos de 15 días no es reembolsable.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">¿Incluye seguro de viaje?</h3>
+                    <p class="text-gray-600">Todas nuestras reservas incluyen un seguro básico de viaje. Puedes contratar coberturas adicionales durante el proceso de reserva.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-2">¿Cómo recibo mi billete?</h3>
+                    <p class="text-gray-600">Recibirás todos los documentos de viaje por email en un plazo máximo de 24 horas después de completar tu reserva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; @2025 Viajes Pallá. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="reservaJS.js"></script>
+    <script>
+        // Mostrar enlace a confirmación si hay datos de reserva
+        if (localStorage.getItem('reservaData')) {
+            document.getElementById('navConfirmacion').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes Pallá - Inicio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="flex flex-col min-h-screen bg-cover bg-center bg-no-repeat"
+    style="background-image: url('https://img.static-af.com/transform/e56219e9-21c7-4bb0-b7a5-f5353a5140d3/');">
+    <!-- Menú de navegación -->
+    <nav class="bg-blue-600 text-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Viajes Pallá</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:underline">Inicio</a></li>
+                <li><a href="destinos.html" class="hover:underline">Destinos</a></li>
+                <li><a href="reserva.html" class="hover:underline">Reserva</a></li>
+                <li><a href="confirmacion.html" class="hover:underline">Confirmación</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- Portada principal -->
+        <header class="relative h-screen flex items-center justify-center bg-cover bg-center"
+            style="background-image: url('assets/portada.jpg');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 text-center text-white px-4">
+                <h1 class="text-5xl md:text-6xl font-bold mb-6">Descubre el mundo con nosotros</h1>
+                <p class="text-xl mb-8">Encuentra los mejores destinos para tus próximas vacaciones</p>
+                <a href="destinos.html"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300">
+                    Explorar destinos
+                </a>
+            </div>
+        </header>
+
+        <!-- Sección de información -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">Por qué elegirnos</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="text-4xl mb-4">✈️</div>
+                        <h3 class="text-xl font-semibold mb-3">Vuelos a todo el mundo</h3>
+                        <p class="text-gray-600">Ofrecemos conexiones a los destinos más increíbles del planeta.</p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="text-4xl mb-4">🏨</div>
+                        <h3 class="text-xl font-semibold mb-3">Mejores hoteles</h3>
+                        <p class="text-gray-600">Seleccionamos cuidadosamente los alojamientos para tu comodidad.</p>
+                    </div>
+                    <div class="text-center p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                        <div class="text-4xl mb-4">🛡️</div>
+                        <h3 class="text-xl font-semibold mb-3">Seguridad garantizada</h3>
+                        <p class="text-gray-600">Tu seguridad es nuestra prioridad en todos nuestros viajes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="indexJS.js"></script>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; @2025 Viajes Pallá. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
